@@ -1,0 +1,11 @@
+import axios from 'axios';
+import { GET_FEED } from './types';
+
+export const getFeed = () => async dispatch => {
+    try {
+        const feed = await axios.get('/api/feed')
+        dispatch({ type: GET_FEED, payload: feed });
+    } catch(err){
+        console.log(err);
+    }
+}
