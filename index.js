@@ -10,6 +10,7 @@ require('./models/User');
 require('./models/Project');
 require('./models/Issue');
 require('./models/Feed');
+require('dotenv').config();
 
 mongoose.connect(prod.mongoURI, (err) => {
 	if(err) throw err
@@ -39,7 +40,7 @@ app.use('/api/issue', issue);
 
 
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
 });

@@ -1,4 +1,5 @@
+require('dotenv').config();
 module.exports = {
-	'mongoURI': "mongodb+srv://oissa:omarissa24@fixeruppercluster.qucyl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-	'secret': "secret123"
+	'mongoURI': process.env.MONGO_URI,
+	'secret': process.env.SECRET
 }
