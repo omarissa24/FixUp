@@ -7,7 +7,7 @@ import * as authActions from '../../actions/auth';
 import { bindActionCreators } from 'redux';
 import ProjectModal from './modals/ProjectModal';
 import CreateUserModal from './modals/CreateUserModal';
-//import IssueModal from './modals/IssueModal';
+import IssueModal from './modals/IssueModal';
 import SidebarMenu from './Menu';
 
 const cardStyle = {
