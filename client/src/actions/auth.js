@@ -17,6 +17,7 @@ export const signUp = values => async dispatch => {
 export const signIn = values => async dispatch => {
     try {
         const res = await axios.post('/api/auth/signIn', values);
+        localStorage.setItem('token', res.data.token);
         dispatch({ type: SIGN_IN_SUCCESS, payload: res.data });
     } catch(err){
         dispatch({ type: SIGN_IN_ERROR, payload: err });
@@ -24,5 +25,6 @@ export const signIn = values => async dispatch => {
 }
 
 export const signOut = () => dispatch => {
+    localStorage.removeItem('token');
     dispatch({ type: SIGN_OUT });
 }

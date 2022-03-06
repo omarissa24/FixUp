@@ -5,7 +5,8 @@ import { CREATE_USER, GET_AFFILIATED, FETCH_USER,
 
 export const createUser = values => async dispatch => {
     try {
-        const res = await axios.post('/api/admin/createUser', values);
+        const res = await axios.post('/api/admin/createUser', values,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: CREATE_USER, payload: res });
     } catch(err){
         console.log(err);
@@ -14,7 +15,8 @@ export const createUser = values => async dispatch => {
 
 export const getSingleUser = userId => async dispatch => {
     try {
-        const response = await axios.get(`/api/user/${userId}`);
+        const response = await axios.get(`/api/user/${userId}`,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: GET_SINGLE_USER, payload: response });
     } catch(err){
         console.log(err);
@@ -23,7 +25,8 @@ export const getSingleUser = userId => async dispatch => {
 
 export const editUser = user => async dispatch => {
     try {
-        const res = await axios.put(`/api/user/${user._id}`, user);
+        const res = await axios.put(`/api/user/${user._id}`, user,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: EDIT_USER, payload: res });
     } catch(err){
         console.log(err);
@@ -32,7 +35,8 @@ export const editUser = user => async dispatch => {
 
 export const getAffiliatedUsers = () => async dispatch => {
     try {
-        const res = await axios.get('/api/affiliated');
+        const res = await axios.get('/api/affiliated',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: GET_AFFILIATED, payload: res });
     } catch(err){
         console.log(err);
@@ -41,7 +45,8 @@ export const getAffiliatedUsers = () => async dispatch => {
 
 export const fetchUser = () => async dispatch => {
     try {
-        const response = await axios.get('/api/current_user');
+        const response = await axios.get('/api/current_user',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_USER, payload: response });
     } catch(err){
         console.log(err);
@@ -50,7 +55,8 @@ export const fetchUser = () => async dispatch => {
 
 export const deleteUser = userId => async dispatch => {
     try {
-        const response = await axios.delete(`/api/admin/user/${userId}`);
+        const response = await axios.delete(`/api/admin/user/${userId}`,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: DELETE_USER, payload: response });
     } catch(err){
         console.log(err);
@@ -59,7 +65,8 @@ export const deleteUser = userId => async dispatch => {
 
 export const fetchUserIssues = userId => async dispatch => {
     try {
-        const response = await axios.get(`/api/issue/getUserIssues/${userId}`)
+        const response = await axios.get(`/api/issue/getUserIssues/${userId}`,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_USERS_ISSUES, payload: response });
     } catch(err){
         console.log(err);

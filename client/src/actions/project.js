@@ -39,7 +39,8 @@ export const deleteProject = projectId => async dispatch => {
 
 export const editProject = project => async dispatch => {
     try {
-        const res = await axios.put(`api/admin/project/${project._id}`, project);
+        const res = await axios.put(`api/admin/project/${project._id}`, project,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: EDIT_PROJECT, payload: res });
     } catch(err){
         console.log(err);
@@ -48,7 +49,8 @@ export const editProject = project => async dispatch => {
 
 export const fetchIssues = projectId => async dispatch => {
     try {
-        const res = await axios.get(`/api/issue/getIssues/${projectId}`);
+        const res = await axios.get(`/api/issue/getIssues/${projectId}`,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_PROJECT_ISSUES, payload: res });
     } catch(err){
         console.log(err);
@@ -57,7 +59,8 @@ export const fetchIssues = projectId => async dispatch => {
 
 export const fetchIssue = issueId => async dispatch => {
     try {
-        const res = await axios.get(`/api/issue/getIssue/${issueId}`);
+        const res = await axios.get(`/api/issue/getIssue/${issueId}`,
+        { headers: { Authorization: localStorage.getItem('token') } });
         console.log(res);
         dispatch({ type: FETCH_ISSUE, payload: res });
     } catch(err){
@@ -67,7 +70,8 @@ export const fetchIssue = issueId => async dispatch => {
 
 export const createIssue = (values, projectId) => async dispatch => {
     try {
-        const res = await axios.post(`/api/issue/createIssue/${projectId}`, values);
+        const res = await axios.post(`/api/issue/createIssue/${projectId}`, values,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: CREATE_ISSUE, payload: res });
     } catch(err){
         console.log(err);
@@ -76,7 +80,8 @@ export const createIssue = (values, projectId) => async dispatch => {
 
 export const editIssue = issue => async dispatch => {
     try {
-        const res = await axios.put(`/api/issue/editIssue/${issue._id}`, issue);
+        const res = await axios.put(`/api/issue/editIssue/${issue._id}`, issue,
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: EDIT_ISSUE, payload: res });
     } catch(err){
         console.log(err);

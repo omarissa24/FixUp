@@ -3,7 +3,8 @@ import { FETCH_USER, FETCH_PROJECTS, FETCH_ALL_USERS, FETCH_ISSUES } from './typ
 
 export const fetchUser = () => async dispatch => {
     try {
-        const response = await axios.get('/api/current_user')
+        const response = await axios.get('/api/current_user',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_USER, payload: response });
     } catch(err){
         console.log(err);
@@ -12,7 +13,8 @@ export const fetchUser = () => async dispatch => {
 
 export const fetchProjects = () => async dispatch => {
     try {
-        const response = await axios.get('/api/admin/projects')
+        const response = await axios.get('/api/admin/projects',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_PROJECTS, payload: response });
     } catch(err){
         console.log(err);
@@ -21,7 +23,8 @@ export const fetchProjects = () => async dispatch => {
 
 export const fetchAllUsers = () => async dispatch => {
     try {
-        const response = await axios.get('/api/affiliated')
+        const response = await axios.get('/api/affiliated',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_ALL_USERS, payload: response });
     } catch(err){
         console.log(err);
@@ -30,7 +33,8 @@ export const fetchAllUsers = () => async dispatch => {
 
 export const fetchIssues = () => async dispatch => {
     try {
-        const response = await axios.get('/api/issue')
+        const response = await axios.get('/api/issue',
+        { headers: { Authorization: localStorage.getItem('token') } });
         dispatch({ type: FETCH_ISSUES, payload: response });
     } catch(err){
         console.log(err);
