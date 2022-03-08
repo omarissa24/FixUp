@@ -108,9 +108,9 @@ class Dashboard extends Component {
                         <Transition visible={this.state.visible} animation='scale' duration={500}>
                             <Card style={cardStyle}>
                                 <Card.Content>
-                                    <Card.Header><Header as='h1'>Welcome back, {user.firstName}</Header></Card.Header>
-                                    <Card.Meta>Issues/Tasks</Card.Meta>
-                                    <Card.Description>Tasks Assigned to you:</Card.Description>
+                                    <Card.Header><Header as='h1'>Hello {user.firstName}!</Header></Card.Header>
+                                    <Card.Meta>Issues</Card.Meta>
+                                    <Card.Description>Issues Assigned to you:</Card.Description>
                                     <List divided relaxed style={{ overflowY: 'scroll', height: '150px' }}>
                                         {this.renderAllIssues()}
                                     </List>
@@ -122,7 +122,7 @@ class Dashboard extends Component {
                                 <Card.Content>
                                     <Card.Header><Header as='h1'>Your Projects</Header></Card.Header>
                                     <Card.Meta>Projects</Card.Meta>
-                                    <Card.Description>List of Projects Under Development</Card.Description>
+                                    <Card.Description>List of Projects Under Development:</Card.Description>
                                     <List divided relaxed style={{ overflowY: 'scroll', height: '150px' }}>
                                         {this.renderProjects()}
                                     </List>
@@ -133,8 +133,8 @@ class Dashboard extends Component {
                             <Card style={cardStyle}>
                                 <Card.Content>
                                     <Card.Header><Header as='h1'>All Users</Header></Card.Header>
-                                    <Card.Meta>Users that are affiliated to you and the projects you have created.</Card.Meta>
-                                    <Card.Description>List of Users</Card.Description>
+                                    <Card.Meta>Users that are affiliated with you and the projects you have created.</Card.Meta>
+                                    <Card.Description>List of Users:</Card.Description>
                                     <List divided relaxed style={{ overflowY: 'scroll', height: '150px' }}>
                                         {this.renderAllUsers()}
                                     </List>

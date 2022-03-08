@@ -10,6 +10,11 @@ import * as projectActions from '../../../actions/project';
 
 const formProps = {}; 
 
+const modalStyle = {
+    marginTop: '16px',
+    marginLeft: '64px'
+}
+
 class IssueModal extends Component {
     constructor(props){
         super(props);
@@ -64,7 +69,7 @@ class IssueModal extends Component {
 
     render() {
         return (
-            <Modal open={this.state.modalOpen} onClose={this.handleClose} trigger={this.renderButton()}>
+            <Modal style={modalStyle} open={this.state.modalOpen} onClose={this.handleClose} trigger={this.renderButton()}>
                 <Modal.Header>{formProps.title}</Modal.Header>
                 <Modal.Content>
                     <Modal.Description>

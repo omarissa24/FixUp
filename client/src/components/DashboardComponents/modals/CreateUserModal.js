@@ -8,6 +8,11 @@ import * as actions from '../../../actions/user';
 
 const formProps = {};
 
+const modalStyle = {
+    marginTop: '40px',
+    marginLeft: '64px'
+}
+
 class CreateUserModal extends Component {
     constructor(props) {
         super(props);
@@ -63,7 +68,7 @@ class CreateUserModal extends Component {
 
     render() {
         return (
-            <Modal open={this.state.modalOpen} onClose={this.handleClose} trigger={this.renderButton()}>
+            <Modal style={modalStyle} open={this.state.modalOpen} onClose={this.handleClose} trigger={this.renderButton()}>
                 <Modal.Header>{formProps.title}</Modal.Header>
                 <Modal.Content>
                     <Modal.Description>

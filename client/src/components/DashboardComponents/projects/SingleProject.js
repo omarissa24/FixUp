@@ -32,11 +32,11 @@ class SingleProject extends Component {
         return (
             <Card.Group>
                 <Card fluid>
-                    <Card.Content>
-                        <Card.Header><Header as='h1'>{this.props.project.title}/{this.props.project.title}</Header></Card.Header>
+                    {/* <Card.Content>
+                        <Card.Header><Header as='h1'><Header.Content>{this.props.project.title}</Header.Content></Header></Card.Header>
                         <Card.Meta>{this.props.project.type}</Card.Meta>
                         <Card.Description>{this.props.project.description}</Card.Description>
-                    </Card.Content>
+                    </Card.Content> */}
                     <IssueModal editMode={false} projectId={projectId} form={projectId} />
                 </Card>
 
