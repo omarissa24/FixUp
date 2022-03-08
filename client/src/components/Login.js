@@ -27,7 +27,7 @@ const Login = () => {
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
                     <Header as='h1' color='black' textAlign='center'>
-                        {' '}FixUp
+                        {' '}FixerUpper
                     </Header>
                         <Tab panes={panes}/>
                 </Grid.Column>
