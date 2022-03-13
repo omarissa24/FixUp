@@ -5,7 +5,7 @@ const { Strategy, ExtractJwt } = require('passport-jwt');
 
 function initPassport(passport){
 	const opts = {
-		jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+		jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 		secretOrKey: secret
 	}
 
