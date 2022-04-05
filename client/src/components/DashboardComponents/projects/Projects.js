@@ -43,7 +43,6 @@ class Projects extends Component {
                     <Table.Row key={project._id}>
                         <Table.Cell>{project.title}</Table.Cell>
                         <Table.Cell>{project.type}</Table.Cell>
-                        <Table.Cell>{project.abbreviation}</Table.Cell>
                         <Table.Cell>{project.owner}</Table.Cell>
                         <Table.Cell>{date.getMonth() + 1}/{date.getDay()}/{date.getFullYear()}</Table.Cell>
                     </Table.Row>
@@ -114,9 +113,8 @@ class Projects extends Component {
                                     <Table.Row>
                                         <Table.HeaderCell>Title</Table.HeaderCell>
                                         <Table.HeaderCell>Type</Table.HeaderCell>
-                                        <Table.HeaderCell>Abbreviation</Table.HeaderCell>
                                         <Table.HeaderCell>Owner</Table.HeaderCell>
-                                        <Table.HeaderCell>Created</Table.HeaderCell>
+                                        <Table.HeaderCell>Created on</Table.HeaderCell>
                                     </Table.Row>
                                 </Table.Header>
 
